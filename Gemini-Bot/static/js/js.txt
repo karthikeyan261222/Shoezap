@@ -1,0 +1,1 @@
+Here all javascript files are stored in this folder

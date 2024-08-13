@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with out Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'ai_bot.png')}}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div id="home">
+            <a href="/">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </div>
+       
+    </header>
+    <div class="chats">
+        <!-- Chat output will be dynamically added here -->
+    </div>
+    <div id="query_area">
+        <div class="text_btn">
+            <div class="message-box">
+                <textarea name="query" id="query" placeholder="Enter your prompt..."></textarea>
+                <input type="file" id="file_upload" accept="image/*" style="display: none;" onchange="handleFileUpload(event)">
+                <i id="upload_icon" class="fa-solid fa-upload" onclick="document.getElementById('file_upload').click();"></i>
+            
+                <script>
+                    function handleFileUpload(event) {
+                        const fileInput = event.target;
+                        const file = fileInput.files[0];
+            
+                        if (file) {
+                            const formData = new FormData();
+                            formData.append('file', file);
+            
+                            fetch('/upload', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                                // Handle success or failure
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    }
+                </script>
+            </div>
+            <button id="submit" onclick="sendMessage()">
+                <span class="material-symbols-outlined">
+                    send
+                </span>
+            </button>
+            <button id="delete" onclick="deleteChats()">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="appname" data-aos="fade-right">
+            Shoezap!
+        </div>
+    </div>
+    <!-- Add a placeholder for the image -->
+    <h2 id="welcome_message">Hello, there !</h2>
+    <h1 class="subtitle">How can I help You Today</h1>
+
+    <div id="image_container" style="text-align: center; display: none; padding: 0 0 50px 0; margin-top: -50px;">
+        <img id="output_image" src="" alt="Generated Image" style="max-width: 50%; height: auto;">
+        
+
+    </div>
+    <script src="{{url_for('static', filename = 'js/app.js')}}"></script>
+    <script src="{{url_for('static', filename = 'js/additional.js')}}"></script>
+   
+</body>
+</html>

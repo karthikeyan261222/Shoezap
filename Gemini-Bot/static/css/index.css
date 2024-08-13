@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Lemon&family=Patua+One&family=Poppins:wght@200;400;500;600;700;800;900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color:black ;
+}
+
+nav {
+    width: 100%;
+    height: 10%;
+}
+
+nav .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav .wrapper .logo img {
+    width: 100%;
+    height: 90%;
+    margin-top: 7%;
+}
+
+nav .wrapper .links {
+    display: flex;
+    align-items: center;
+}
+
+nav .wrapper .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    position: relative;
+    font-size: 1.4rem;
+}
+
+nav .wrapper .links a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 4px;
+    background-color: yellow;
+    width: 0%;
+    transition: 0.3s ease;
+}
+
+nav .wrapper .links a:hover::before {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+section .content {
+    width: 120%;
+    color:antiquewhite;
+}
+
+section .content h1 {
+    font-size: 4.5rem;
+    margin: 7rem 2rem 0 5rem;
+    color:antiquewhite;
+}
+
+section .content h1 span {
+    color: red;
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+section .content p {
+    font-size: 1.2rem;
+    margin: 1rem 2rem 0 5rem;
+}
+
+section .content button {
+    font-size: 1.2rem;
+    width: 200px;
+    height: 50px;
+    background: red;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    margin: 1.5rem 0 0 5.5rem;
+    transition: 0.3s linear;
+}
+
+
+section .content button:hover {
+    color:red;
+    background-color: transparent;
+    border: none;
+    box-shadow: 3px 3px black;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+section .image {
+    width: 100%;
+}
+
+section .image .box {
+    position: absolute;
+    background: yellow;
+    width: 900px;
+    height: 900px;
+    right: -370px;
+    bottom: -370px;
+    border-radius: 100%;
+    pointer-events: none;
+    transition: 0.3s ease-in;
+}
+
+section .image .box img {
+    width: 300px;
+    height: 450px;
+    margin: -50px 0 0 0;
+}
+
+section .image .nike_yellow_sneaker {
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_yellow_sneaker img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_black_golf_shoe {
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_golf_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_black_golf_shoe img {
+   
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_white-green_jorden {
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_white-green_jorden img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_white-green_jorden img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_black_soccer_shoe {
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_soccer_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_black_soccer_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_black_tennis_shoe img {
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_tennis_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_black_tennis_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_black_air_jordan  {
+    opacity: 0;
+    background: yellow;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_air_jordan img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_basketball_shoe {
+    opacity: 0;
+    transform: rotate(-20deg);
+    background-color:yellow ;
+    filter: drop-shadow(2px 2px 50px white);
+}
+
+section .image .nike_black_basketball_shoe img {
+    transform: rotate(-20deg);
+    height: 520px;
+    margin: -130px 0 0 -20px;
+    filter: drop-shadow(2px 2px 50px white);
+}
+/* Container for the scrolling images */
+.img-links {
+    display: flex; /* Align items horizontally */
+    overflow: hidden; /* Hide overflow to show only one viewport at a time */
+    white-space: nowrap; /* Prevent wrapping */
+    width: 100vw; /* Full viewport width */
+    height: 10vh; /* Height of the container */
+    position: absolute; /* Position container absolutely */
+    bottom: 20px; /* Position from bottom */
+    margin: 0; /* Remove margin for proper scrolling */
+    animation: scroll-left 50s linear infinite; /* Animation to scroll from right to left */
+}
+
+/* Individual links */
+.img-links a {
+    display: inline-block; /* Align links horizontally */
+    width: auto; /* Adjust width as needed */
+    height: 100%; /* Full height of container */
+    margin: 0 20px; /* Spacing between links */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: 0.2s linear; /* Smooth transition for hover effect */
+}
+
+/* Image styling */
+.img-links a img {
+    width: 70px; /* Width of images */
+    height: 90px; /* Height of images */
+    transform: rotate(-20deg);
+}
+
+/* Hover effect for links */
+.img-links a:hover {
+    margin-top: -20px; /* Move link up on hover */
+    filter: drop-shadow(2px 2px 10px yellow); /* Apply shadow effect on hover */
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%); /* Start from the right edge */
+    }
+    to {
+        transform: translateX(-100%); /* Move to the left edge */
+    }
+}
+
+.selected-shoe {
+    width: 1200px; /* Increased from 1000px */
+    height: 1200px; /* Increased from 1000px */
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.2); /* Increased from 1.1 */
+}
+
+.selected-shoe img {
+    width: 600px; /* Increased from 500px */
+    height: 800px; /* Increased from 700px */
+    transition: transform 0.3s ease-in-out;
+}
+section .image .nike_yellow_sneaker img,
+section .image .nike_black_air_jordan img,
+section .image .nike_green_tennis_shoe img ,
+section .nike_white-green_jorden img,
+section .image .nike_orange_tennis_shoe img,
+section .image .nike_black_golf_shoe img,
+section .image .nike_blazer_court_shoe img,
+section .image .nike_red_balck_soccer_shoe img,
+section .image .nike_men_workout_shoe img,
+section .nike_black_tennis_shoe img,
+section .image .nike_blue_white_sneaker img,
+section .image .nike_black_basketball_shoe img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    transform-origin: left ;
+}
+
+section .image .nike_yellow_sneaker img,
+section .image .nike_black_air_jordan img,
+section .nike_white-green_jorden img,
+section .nike_black_tennis_shoe img,
+section .image .nike_black_golf_shoe img,
+section .image .nike_blazer_court_shoe img,
+section .image .nike_blue_white_sneaker ,
+section .image .nike_green_tennis_shoe img ,
+section .image .nike_green_golf_shoe img,
+section .image .nike_red_balck_soccer_shoe img,
+section .image .nike_men_workout_shoe img,
+section .image .nike_orange_tennis_shoe img,
+section .image .nike_green_golf_shoe img,
+section .image .nike_black_basketball_shoe img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+section .image .nike_yellow_sneaker img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+
+section .image .nike_black_air_jordan img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+
+section .image .nike_black_basketball_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+    margin: 0;
+}
+section .image .nike_blue-white_sneaker img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_blue-white_sneaker img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_blue-white_sneaker img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_blazer_court_shoe.png img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_blazer_court_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_blazer_court_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_green_golf_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_green_golf_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_green_golf_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_green_tennis_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_green_tennis_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_green_tennis_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_men_workout_shoe img {
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_men_workout_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_men_workout_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_orange_tennis_shoe img{
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_orange_tennis_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_orange_tennis_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_red_balck_soccer_shoe img{
+    width: 330px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(2px 2px 50px white);
+}
+section .image .nike_red_balck_soccer_shoe img {
+    width: auto;
+    height: 80%;
+    transform: rotate(-20deg);
+}
+section .image .nike_red_balck_soccer_shoe img{
+    opacity: 1;
+    filter: drop-shadow(2px 2px 50px white);
+}
+a{
+    text-decoration: none;
+}
+
+.appname{
+    color: rgb(232, 15, 15);
+    padding-top: 4rem;
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0rem 2rem 0 -69rem;
+
+}

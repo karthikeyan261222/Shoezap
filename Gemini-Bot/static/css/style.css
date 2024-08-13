@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Mukta:wght@200;300;400;500;600;700;800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Mulish", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    height: 4rem;
+    background-color: #1F1F1F;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header div#home a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+header div#chat_options p {
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    background-color: #2C2C2C;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+header div#chat_options ul {
+    display: none;
+    background-color: #1F1F1F;
+    border-radius: 5px;
+    position: absolute;
+    top: 3.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header div#chat_options ul li {
+    list-style-type: none;
+}
+
+header div#chat_options ul li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+div#query_area {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #1F1F1F;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+div.text_btn {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+div#query_area .message-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+div#query_area textarea {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #333;
+    padding: 0.75rem;
+    background-color: #2C2C2C;
+    color: white;
+    font-size: 1rem;
+    resize: none;
+    margin-right: 0.5rem;
+    flex-grow: 1;
+    padding-right: 40px; /* Add padding to account for the button */
+    height: 50px; /* Set a fixed height for the textarea */
+}
+
+div#query_area button#submit {
+    background-color: #f44336;
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+div.chats {
+    padding: 5rem 1rem 8rem 1rem;
+    width: 100%;
+    max-width: 1200px;  /* Increased from 750px to 800px */
+    margin: 0 auto;
+}
+
+div.chat {
+    margin-bottom: 1.5rem;
+}
+
+div.chat div.user, div.chat div.gemini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+div.user img.avatar, div.gemini img.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #f44336;
+    background-color: #282828;
+}
+
+div.chat div.user p, div.chat div.gemini p {
+    background-color: #2C2C2C;
+    padding: 1rem;
+    border-radius: 20px;
+    color: white;
+    align-items: center;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Display ellipsis for overflowing text */
+    display: inline-block; /* Allows the background to adjust based on content */
+    width: auto; /* Auto width based on content */
+}
+
+div.chat div.user p {
+    margin-left: auto;
+    background-color: #f44336;
+}
+
+div.chat div.gemini p {
+    margin-right: auto;
+}
+
+@media screen and (max-width: 640px) {
+    div#query_area textarea {
+        width: 80%;
+    }
+
+    div#query_area button#submit {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+#image_container button {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display to place it below the image */
+    font-size: 16px; /* Larger text */
+    margin: 10px auto; /* Center the button with margin on top/bottom and auto on sides */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#image_container button:hover {
+    background-color: #f44336; 
+}
+
+#upload_icon {
+    position: absolute;
+    right: 22px; /* Adjust position inside the textarea */
+    top: 50%; 
+    transform: translateY(-50%);
+    font-size: 20px; 
+    cursor: pointer;
+    color: white; /* Change the icon color to white */
+}
+
+#loading_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Adjust height as needed */
+    font-size: 1.2rem;
+    color: white;
+}
+
+#loading {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+div#query_area {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #1F1F1F;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+div.text_btn {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+div#query_area .message-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+div#query_area textarea {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #333;
+    padding: 0.75rem;
+    background-color: #2C2C2C;
+    color: white;
+    font-size: 1rem;
+    resize: none;
+    margin-right: 0.5rem;
+    flex-grow: 1;
+    padding-right: 60px; /* Adjusted for larger buttons */
+    height: 50px; /* Fixed height for consistency */
+}
+
+div#query_area button {
+    background-color: #f44336; /* Red background for both buttons */
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem; /* Adjusted padding */
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem; /* Adjusted font size for consistency */
+    width: 50px; /* Consistent width */
+    height: 50px; /* Consistent height */
+    margin-left: 10px; /* Space between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#query_area button#submit {
+    background-color: #f44336; /* Red background for submit button */
+}
+
+div#query_area button#delete {
+    background-color: #f44336; /* Ensures delete button has the same background */
+}
+
+div#query_area button:hover {
+    background-color: #d32f2f; /* Slightly darker red on hover for both buttons */
+}
+
+div#query_area i {
+    font-size: 1.5rem; /* Ensures icon size matches the button size */
+}
+#welcome_message {
+    font-size: 2.7rem;
+    width: fit-content;
+    background-clip: text;
+    background: linear-gradient(to right, #f11818, #d8cfd0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    top: 45%; /* Move up by reducing the top percentage */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--subheading-color);
+    width: fit-content;
+    position: absolute;
+    top: calc(45% + 3.5rem); /* Adjust this accordingly if you want a different spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.appname {
+    color: rgb(221, 43, 43);
+    padding-top: 4rem;
+    text-align: left;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0; /* Remove margin to prevent unwanted shifts */
+    position: fixed; /* Fix position relative to the viewport */
+    top: -3.4rem; /* Adjust as needed */
+    left: 3.4rem; /* Adjust as needed */
+    z-index: 2000; /* Higher z-index to place it above other elements */
+}
